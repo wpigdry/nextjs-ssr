@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-ssr",
+  "version": "1.0.0",
+  "description": "next.js实现ssr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpigdry/nextjs-ssr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wpigdry/nextjs-ssr/issues"
+  },
+  "homepage": "https://github.com/wpigdry/nextjs-ssr#readme",
+  "dependencies": {
+    "next": "^12.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
