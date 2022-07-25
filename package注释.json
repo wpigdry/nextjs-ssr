@@ -1,0 +1,30 @@
+{
+    "name": "nextjs-ssr",
+    "version": "1.0.0",
+    "description": "next.js实现ssr",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      // npm run dev 直接启动next命令，走的next框架的配置，不和后端练习，输入pages下的路由直接返回页面
+      "dev": "next",
+      // npm run dev 直接运行node server.ts命令，使用node运行server.ts文件，从而启动koa服务，与前端相连
+      "dev": "node server.ts"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/wpigdry/nextjs-ssr.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/wpigdry/nextjs-ssr/issues"
+    },
+    "homepage": "https://github.com/wpigdry/nextjs-ssr#readme",
+    "dependencies": {
+      "koa": "^2.13.4",
+      "next": "^12.2.2",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  }
+  
