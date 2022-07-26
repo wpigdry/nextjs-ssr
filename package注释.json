@@ -8,7 +8,9 @@
       // npm run dev 直接启动next命令，走的next框架的配置，不和后端练习，输入pages下的路由直接返回页面
       "dev": "next",
       // npm run dev 直接运行node server.ts命令，使用node运行server.ts文件，从而启动koa服务，与前端相连
-      "dev": "node server.ts"
+      "dev": "node server.ts",
+      // 监听代码文件的变动工具, 代码变动自动重启
+      "dev": "nodemon server.ts"
     },
     "repository": {
       "type": "git",

@@ -3,24 +3,23 @@ const next = require('next');
 
 async function createServer () {
 
-    const dev = process.env.RUN_NODE_ENV === 'development';
+    const dev = process.env.NODE_ENV !== 'production';
     const app = next({dev});
     const handle = app.getRequestHandler();
 
-    await app.prepare().then();
-
+    // app.prepare()之后进行server的服务操作
+    await app.prepare();
     const server = new Koa();
 
-    server.get('*', (req, res) => {
-        console.log(req, res, '*');
+    server.use(async (ctx, next) => {
+        console.log(ctx.req, ctx.res, '*');
         
-        return handle(req, res)
+        await handle(ctx.req, ctx.res)
+        ctx.respond = false;
     })
 
-    await new Promise(resolve => {
-        server.listen(3000, () => {
-              console.log('koa服务启动成功！');
-        });
+    server.listen(3000, () => {
+        console.log('koa服务启动成功！');
     });
 }
 
