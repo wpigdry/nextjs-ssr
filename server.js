@@ -1,6 +1,8 @@
 const Koa = require('koa');
 const next = require('next');
 
+const routerConfig = require('./routerConfig');
+
 async function createServer () {
 
     // console.log(process.env.NODE_ENV, 'process.env.NODE_ENV');
@@ -12,8 +14,10 @@ async function createServer () {
     await app.prepare();
     const server = new Koa();
 
+    // 配置proxy代理服务器转发
+    server.use(routerConfig(handle).routes());
+
     server.use(async (ctx, next) => {
-        console.log(ctx.req, ctx.res, '*');
         
         await handle(ctx.req, ctx.res)
         ctx.respond = false;
