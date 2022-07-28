@@ -14,7 +14,7 @@ export default () => {
 
     const clk = () => {
         ajax({
-            url: 'http://127.0.0.1:3000/clk',
+            url: 'http://127.0.0.1:3000/postapi/clk',
             method: 'post',
             data: {
                 a: 1,
