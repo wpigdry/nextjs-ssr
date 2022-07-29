@@ -27,6 +27,21 @@ export default () => {
         });
     }
 
+    const handle = () => {
+        ajax({
+            url: 'http://127.0.0.1:3000/postapi/handle',
+            method: 'post',
+            data: {
+                a: 1,
+                b: 2
+            }
+        }).then(res => {
+            console.log(res, 'handle响应数据');
+        }).catch(err => {
+            console.log(err, 'handle请求错误');
+        });
+    }
+
     return (
         <Layout>
             <h1>
@@ -35,6 +50,7 @@ export default () => {
             <div className='main' style={{background: 'red'}}>
                 页面主体
                 <div onClick={clk}>按钮</div>
+                <div onClick={handle}>发起请求</div>
             </div>
          </Layout>
     )
