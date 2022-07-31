@@ -1,4 +1,4 @@
-import {FC, useEffect, useState, useRef, useCallback} from 'react';
+import {FC, useEffect, useState, useRef, useCallback, Suspense} from 'react';
 
 export default () => {
     useEffect(() => {
@@ -6,6 +6,11 @@ export default () => {
     }, []);
 
     return (
-        <div>main页面</div>
+        <div>main页面
+
+            <Suspense>
+                并发渲染
+            </Suspense>
+        </div>
     )
 };
