@@ -5,9 +5,9 @@ specifiers:
   koa: ^2.13.4
   koa-proxy: 1.0.0-alpha.3
   koa-router: ^7.4.0
-  next: ^12.2.3
-  react: ^18.2.0
-  react-dom: ^18.2.0
+  next: ^12.0.3
+  react: ^18.0.0-alpha-327d5c484-20211106
+  react-dom: ^18.0.0-alpha-327d5c484-20211106
 
 dependencies:
   http-proxy: 1.18.1

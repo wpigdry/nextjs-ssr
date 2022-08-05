@@ -26,7 +26,7 @@ async function createServer () {
     //     return next();
     // })
 
-    server.listen(3000, () => {
+    server.listen(5000, () => {
         console.log('koa服务启动成功！');
     });
 }

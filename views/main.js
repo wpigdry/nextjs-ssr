@@ -1,16 +1,28 @@
-import {FC, useEffect, useState, useRef, useCallback, Suspense} from 'react';
+// import Spinner from "../components/spinner";
+import { Suspense, SuspenseList } from "react";
+import { lazy } from "react";
 
-export default () => {
-    useEffect(() => {
-      
-    }, []);
+import { useRouter } from "next/router";
 
-    return (
-        <div>main页面
+const SuspenseComponent = lazy(() => import("../components/test"));
 
-            <Suspense>
-                并发渲染
-            </Suspense>
-        </div>
-    )
-};
+export default function Home() {
+  const { query: queryParams } = useRouter();
+
+  const first = queryParams.first != undefined ? queryParams.first : 1;
+
+  const second = queryParams.second != undefined ? queryParams.second : 2;
+  return (
+    <SuspenseList>
+      <Suspense fallback={<div>loading...</div>}>
+        {/* A component that uses Suspense-based */}
+        <SuspenseComponent value={first} />
+      </Suspense>
+
+      <Suspense fallback={<div>loading...</div>}>
+        {/* A component that uses Suspense-based */}
+        <SuspenseComponent value={second} />
+      </Suspense>
+    </SuspenseList>
+  );
+}
